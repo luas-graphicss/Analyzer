@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byteguard-analyzer"
+version = "3.2.0"
+description = "Offline, bounded, static file analysis using the Python standard library"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+byteguard = "byteguard.cli:main"
+
+[project.gui-scripts]
+byteguard-desktop = "byteguard.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["byteguard*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
